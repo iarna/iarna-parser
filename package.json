@@ -1,0 +1,34 @@
+{
+  "name": "@iarna/parser",
+  "version": "1.0.0",
+  "description": "A traceable, unlimited-depth recursive-descent parsing engine",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Rebecca Turner <me@re-becca.org> (http://re-becca.org/)",
+  "license": "ISC",
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "devDependencies": {
+    "@iarna/standard": "^2.0.2",
+    "tap": "^14.2.3",
+    "weallbehave": "*",
+    "weallcontribute": "*",
+    "standard-version": "*"
+  },
+  "scripts": {
+    "prerelease": "npm t",
+    "release": "standard-version -s",
+    "postrelease": "npm publish && git push --follow-tags",
+    "pretest": "iarna-standard",
+    "test": "tap --100 test/*.js",
+    "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+    "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iarna/iarna-parser.git"
+  },
+  "bugs": "https://github.com/iarna/iarna-parser/issues",
+  "homepage": "https://npmjs.com/package/@iarna/parser"
+}
